@@ -1,1 +1,11 @@
 test
+
+<p>
+  <% @res.each do |account| %>
+  	<%=account['id']%>
+  	<%=account['sfid']%>
+  	<%=account['name']%> <br/>
+  <% end %>
+
+
+</p>
