@@ -1,11 +1,13 @@
-test
+<div class="container">
+	<p>
+	  <% @res.each do |account| %>
+	  	<%=account['id']%>
+	  	<%=account['sfid']%>
+	  	<%=account['name']%> <br/>
+	  <% end %>
 
-<p>
-  <% @res.each do |account| %>
-  	<%=account['id']%>
-  	<%=account['sfid']%>
-  	<%=account['name']%> <br/>
-  <% end %>
 
+	</p>
 
-</p>
+</div>
+
