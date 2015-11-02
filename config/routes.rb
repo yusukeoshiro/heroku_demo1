@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
   #get 'sessions/new'
-  get  'login',    :to => 'sessions#new',     :as => 'login'
-  get  'logout',   :to => 'sessions#destroy', :as => 'logout'
-  post 'sessions', :to => 'sessions#create',  :as => 'sessions'
+  get  'login',    :to => 'sessions#new',      :as => 'login'
+  get  'logout',   :to => 'sessions#destroy',  :as => 'logout'
+  post 'sessions', :to => 'sessions#create',   :as => 'sessions'
 
-  get  'products', :to => 'products#index',   :as => 'products'
+  get  'products', :to => 'products#index',    :as => 'products'
+
+  get  'cart',     :to => 'cart_products#index',:as => 'cart'
 
   resources :users
   root 'welcome#index'
