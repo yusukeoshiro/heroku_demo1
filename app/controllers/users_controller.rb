@@ -71,4 +71,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :birthday, :password)
     end
+
+    def self.authenticate(email, password)
+      find_by_email_and_password(email, Digest::SHA1.hexdigest(password))
+
+    end
 end
