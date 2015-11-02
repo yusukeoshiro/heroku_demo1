@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get  'logout',   :to => 'sessions#destroy', :as => 'logout'
   post 'sessions', :to => 'sessions#create',  :as => 'sessions'
 
+  get  'products', :to => 'products#index',   :as => 'products'
 
   resources :users
   root 'welcome#index'

@@ -1,0 +1,29 @@
+
+<div class="container">
+	<h1>製品カタログ</h1>
+
+
+	<% @res.each do |product| %>
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><%=product['name']%></div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-sm-4">
+						<img src="<%=product['image_url__c']%>" style="height:200px;"/>
+					</div>
+					<div class="col-sm-8">
+						<%=product['description']%>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+
+
+	<% end %>
+
+
+
+</div>
