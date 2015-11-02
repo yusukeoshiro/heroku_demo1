@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+	skip_before_action :login_required, :only => [:index]
+
 	def index
 		require 'pg'
 		#conn = PG::Connection.open(:dbname => 'myapp_development')
