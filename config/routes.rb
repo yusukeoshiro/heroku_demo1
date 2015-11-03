@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get  'cart',     :to => 'cart_products#index',:as => 'cart'
 
   resources :users
-  root 'welcome#index'
+  #root 'welcome#index'
+  root 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
