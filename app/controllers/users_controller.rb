@@ -28,8 +28,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+
     respond_to do |format|
       if @user.save
+        require 'pg'
+        conn = PG::Connection.open(ENV['DATABASE_URL'])
+        @res = conn.exec_params("INSERT INTO salesforce.contact (lastname, password__c, email) VALUES ('#{@user.name}','#{@user.password}','#{@user.email}')")
+        conn.close
+
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else

@@ -49,3 +49,4 @@ gem 'rails_12factor'
 
 gem 'hirb'
 gem 'hirb-unicode'
+gem 'dotenv-rails'
