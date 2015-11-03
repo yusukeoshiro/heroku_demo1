@@ -1,8 +1,15 @@
 <div class="jumbotron" style="background-image: url(http://media.bizj.us/view/img/2621091/salesforce-tower*1200xx2036-1145-232-0.jpg); background-size:cover;">
 
 	<div class="container">
+<!--
 		<h1>Hello, world!</h1>
 		<p>...</p>
 		<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+-->
+		<div class="text-center">
+			<h2>Hello, <%=session[:user_name]%></h2>
+			<%= image_tag 'dummy_person.jpg', class:"img-circle img-thumbnail", size:"100x100" %>
+		</div>
 	</div>
 </div>
+
