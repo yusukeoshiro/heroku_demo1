@@ -3,5 +3,7 @@
   "description": "created by yusuke oshiro",
   "repository": "https://github.com/yusukeoshiro/heroku_demo1",
   "logo": "https://www.herokucdn.com/deploy/button.svg",
-  "keywords": ["heroku","demo","rails","heroku connect"]
+  "keywords": ["heroku","demo","rails","heroku connect"],
+  "addons": ["heroku-postgresql","heroku-connect"],
+  "scripts": { "postdeploy": "bundle exec rake db:migrate" }
 }
