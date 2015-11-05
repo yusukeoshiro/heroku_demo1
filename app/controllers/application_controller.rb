@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
       if res.num_tuples() > 0
         return res[0]
       else
-        return null
+        return false
       end
   	end
   end
