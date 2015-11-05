@@ -4,34 +4,75 @@
     </style>
 
 
-<div class="container">
-	<h3>近い店舗を表示</h3>
-</div>
-    <div id="map"></div>
+    <div class="container">
+     <h3>近い店舗を表示</h3>
+ </div>
+ <div id="map"></div>
 
 
-    <script type="text/javascript">
+ <script type="text/javascript">
 
 
-    	$(function(){
-		    if (navigator.geolocation) {
-		        navigator.geolocation.getCurrentPosition(showPosition);
-		    } else { 
-		        x.innerHTML = "Geolocation is not supported by this browser.";
-		    }
-    	})
+    $(function(){
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    })
 
-		function showPosition(position) {
-		    //x.innerHTML = "Latitude: " + position.coords.latitude + 
-		    //"<br>Longitude: " + position.coords.longitude; 
-		    map = new google.maps.Map(document.getElementById('map'), {
-    			center: {lat: position.coords.latitude, lng: position.coords.longitude},
-    			zoom: 15
-    		});
-		}
+    function showPosition(position) {
+        //x.innerHTML = "Latitude: " + position.coords.latitude + 
+        //"<br>Longitude: " + position.coords.longitude; 
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: position.coords.latitude, lng: position.coords.longitude},
+            zoom: 15
+        });
+
+        for(var i = 0; i < listAccounts.length ; i++ ){
+            createMarkers( listAccounts[i] );
+        }
+    }
 
 
-    	var map;
+
+    var markersArray = [];
+
+    var map;
+
+    var listAccounts = [
+    <% @res.each do |store| %>
+    {
+        id: "<%=store['sfid']%>",
+        Name: "<%=store['name']%>",
+        lat: <%=store['location__latitude__s']%>,
+        lng: <%=store['location__longitude__s']%>
+    },
+    <% end %> 
+    ];
+
+
+
+    function createMarkers(placeObj){
+        var markerloc = new google.maps.LatLng(placeObj.lat, placeObj.lng);
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            position: markerloc,
+            animation: google.maps.Animation.DROP
+        });
+        markersArray.push( marker );
+
+        var content = "<div style='width:200px;'><a href='/stores/"+placeObj.id+"'>"+ placeObj.Name +"</a></div>";
+        infowindow = new google.maps.InfoWindow();
+        google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+            return function() {
+                infowindow.setContent(content);
+                infowindow.open(map,marker);
+            };
+        })(marker,content,infowindow));
+    }
+
 
 
     </script>
