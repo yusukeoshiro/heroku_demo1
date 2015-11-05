@@ -8,7 +8,17 @@ class ApplicationController < ActionController::Base
   private
   def current_user
   	if session[:user_id]
-  		@login_user ||= User.find_by(:id=>session[:user_id])
+  		#@login_user ||= User.find_by(:id=>session[:user_id])
+
+
+      conn = PG::Connection.open(ENV['DATABASE_URL'])
+      res = conn.exec_params("SELECT * FROM salesforce.contact WHERE sfid = '#{session[:user_id]}'")
+      conn.close
+      if res.num_tuples() > 0
+        return res[0]
+      else
+        return null
+      end
   	end
   end
 

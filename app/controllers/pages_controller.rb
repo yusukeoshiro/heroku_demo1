@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 	end
 
 	def userid
-		@user = User.find(session['user_id'])
+		#@user = User.find(session['user_id'])
 	end
 
 end
