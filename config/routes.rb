@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get  'userid',   :to => 'pages#userid', :as => 'userid'
   get 'stores', :to => 'stores#index', :as => 'stores'
+  get 'coupons', :to => 'coupons#index', :as => 'coupons'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

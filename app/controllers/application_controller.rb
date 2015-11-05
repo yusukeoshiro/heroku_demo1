@@ -4,6 +4,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
   before_action :login_required
+  before_filter :application
+
+  def application
+    #@test = 'test'  
+      conn = PG::Connection.open(ENV['DATABASE_URL'])
+      @coupons = conn.exec_params("SELECT * FROM salesforce.sentcoupon__c WHERE user__c = '#{session[:user_id]}' AND sent_time__c < '#{Time.now.utc}' ")
+      @num_coupons = @coupons.num_tuples()
+      @has_new_coupons = @num_coupons > 0
+      conn.close
+
+  end
+
 
   private
   def current_user

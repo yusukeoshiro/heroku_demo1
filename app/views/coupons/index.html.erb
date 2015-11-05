@@ -1,0 +1,20 @@
+<div class="container">
+	<h1>あなたのクーポン</h1>
+
+
+	<% @coupons.each do |a| %>
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="text-center">
+					<img src="<%=a['image_url__c']%>" style="height:200px;"/>
+				</div>
+			</div>
+		</div>
+
+
+
+	<% end %>
+
+
+</div>

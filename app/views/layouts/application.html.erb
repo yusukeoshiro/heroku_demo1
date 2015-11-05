@@ -62,8 +62,13 @@
 						<% end %>
 					</li>
 					<li>
-						<%=link_to userid_path do%>
-						<span class="glyphicon glyphicon-gift" aria-hidden="true"></span> クーポン
+						<%=link_to coupons_path do%>
+						<span class="glyphicon glyphicon-gift" aria-hidden="true"></span> クーポン 
+						<% if @has_new_coupons %>
+							<span class="label label-danger label-as-badge"><%=@num_coupons%></span>
+						<% end %>
+						
+
 						<% end %>
 					</li>
 					<li>
@@ -103,8 +108,7 @@
 </div><!--/.nav-collapse -->
 </div>
 </nav>
-
-
+<%=@test%>
 
 <%= yield %>
 
