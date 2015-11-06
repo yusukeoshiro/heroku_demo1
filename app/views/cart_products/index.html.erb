@@ -1,3 +1,23 @@
 <div class="container">
-under construction
+<h4>あなたのカート</h4>
+	<table class="table">
+		<tr>
+			<th colspan="2">製品</th>
+			<th>価格</th>
+			<th>数量</th>
+		</tr>
+		<% @res.each do |product| %>
+			<tr>
+				<td><img src="<%=product['image_url__c']%>" style="width:50px;" /></td>
+				<td><%=product['name']%></td>
+				<td><%=product['price__c']%></td>
+				<td><%=product['quantity__c']%></td>
+			</tr>
+		<% end %>
+	</table>
+
+	<div class="text-center">
+		<button class="btn btn-danger">レジへ進む</button>
+	</div>
+
 </div>

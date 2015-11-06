@@ -15,7 +15,7 @@
 					<div class="col-sm-8">
 						<%=product['description__c']%>
 						<div class="text-right" style="padding-top:10px;">
-							<button class="btn btn-success">カートへ追加</button>
+							<%=link_to "カートへ追加",  addtocart_path( product['id'] ), class:"btn btn-success"   %>
 						</div>
 					</div>
 				</div>
