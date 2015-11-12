@@ -43,7 +43,7 @@
     var listAccounts = [
     <% @res.each do |store| %>
     {
-        id: "<%=store['sfid']%>",
+        id: "<%=store['id']%>",
         Name: "<%=store['name']%>",
         lat: <%=store['location__latitude__s']%>,
         lng: <%=store['location__longitude__s']%>
@@ -63,7 +63,7 @@
         });
         markersArray.push( marker );
 
-        var content = "<div style='width:200px;'><a href='/stores/"+placeObj.id+"'>"+ placeObj.Name +"</a></div>";
+        var content = "<div style='width:200px;'><a href='/store/"+placeObj.id+"'>"+ placeObj.Name +"</a></div>";
         infowindow = new google.maps.InfoWindow();
         google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
             return function() {

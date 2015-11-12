@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   root 'pages#index'
   get  'userid',   :to => 'pages#userid', :as => 'userid'
   get 'stores', :to => 'stores#index', :as => 'stores'
+  get 'store/:id',  :to => 'stores#show',  :as => 'store'
+
   get 'coupons', :to => 'coupons#index', :as => 'coupons'
   get 'addtocart/:pid', :to => 'cart_products#add'  , :as=> 'addtocart'
   get 'remove/:id', :to => 'cart_products#remove', :as => 'remove'
