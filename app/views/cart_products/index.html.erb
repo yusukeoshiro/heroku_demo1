@@ -5,6 +5,7 @@
 			<th colspan="2">製品</th>
 			<th>価格</th>
 			<th>数量</th>
+			<th></th>
 		</tr>
 		<% @res.each do |product| %>
 			<tr>
@@ -12,6 +13,7 @@
 				<td><%=product['name']%></td>
 				<td><%=product['price__c']%></td>
 				<td><%=product['quantity__c']%></td>
+				<td><%=link_to("削除", remove_path(product['cartitem_id']))%></td>
 			</tr>
 		<% end %>
 	</table>

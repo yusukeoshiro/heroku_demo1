@@ -2,10 +2,9 @@ class CartProductsController < ApplicationController
 
 	def index
 		query = "
-		SELECT salesforce.cartitem__c.*, salesforce.product__c.*
+		SELECT salesforce.cartitem__c.id AS cartitem_id, salesforce.cartitem__c.*, salesforce.product__c.*
 		FROM salesforce.cartitem__c
-		INNER JOIN salesforce.product__c
-		ON salesforce.cartitem__c.product__c = salesforce.product__c.sfid
+		INNER JOIN salesforce.product__c ON salesforce.cartitem__c.product__c = salesforce.product__c.sfid
 		WHERE salesforce.cartitem__c.user__c = '#{session['user_id']}'
 		";
 		#print query
@@ -28,6 +27,15 @@ class CartProductsController < ApplicationController
 
 		redirect_to cart_path
 	end
+
+	def remove
+		id = params[:id]
+		conn = PG::Connection.open(ENV['DATABASE_URL'])
+		conn.exec_params( "DELETE FROM salesforce.cartitem__c WHERE id = '#{id}'" );
+		conn.close		
+		redirect_to cart_path
+	end
+
 end
 
 
