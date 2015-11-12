@@ -4,6 +4,6 @@
   "repository": "https://github.com/yusukeoshiro/heroku_demo1",
   "logo": "https://www.herokucdn.com/deploy/button.svg",
   "keywords": ["heroku","demo","rails","heroku connect"],
-  "addons": ["heroku-postgresql","herokuconnect"],
+  "addons": ["heroku-postgresql","herokuconnect","papertrail"],
   "scripts": { "postdeploy": "bundle exec rake db:migrate" }
 }
