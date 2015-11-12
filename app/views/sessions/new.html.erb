@@ -5,9 +5,9 @@
 
     body{
     	//background-color: #26598E;
-    	background-image: url(<%=image_url 'fruits.jpg'%>);
-    	//background-size: contain;
-    	//background-repeat: no-repeat;
+    	background-image: url(<%= getImageByCode("01") == false ? image_url('fruits.jpg') : getImageByCode("01") %>);
+    	background-size: cover;
+    	background-repeat: no-repeat;
     }
 
     .container {
@@ -34,9 +34,6 @@
 
 
 <div class="container" style="max-width:500px;padding-top:30px;">
-	
-
-
 	<div class="content">
 		<p class="alert"><%=flash[:alert] %></p>
 		<div class="row">

@@ -1,4 +1,12 @@
-<div class="jumbotron" style="background-image: url(<%=image_url('bg.jpg')%>); background-size:cover;">
+<style>
+	#jtron{
+		background-image: url(<%= getImageByCode("02") == false ? image_url('bg.jpg') : getImageByCode("02") %>); 
+		background-size:cover;
+	
+	}
+</style>
+
+<div class="jumbotron" id="jtron">
 
 	<div class="container">
 <!--

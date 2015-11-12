@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 
 
 	def create
+
 		user = User.authenticate(params[:email],params[:password])
 		if user
 			session[:user_id] = user['sfid']
@@ -15,11 +16,15 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
+
 		reset_session
 		flash[:alert] = "logged out"
 		redirect_to login_path
 	end
 
 	def new
+
+		#@code = getImageByCode("test")
+
 	end
 end
