@@ -5,7 +5,8 @@
 	<p>
 		<%= image_tag 'dummy_person.jpg', class:"img-circle img-thumbnail", size:"100x100" %><br/>
 		お名前:<%=session['user_name']%> 様<br/>
-		会員番号:<%=session['user_id']%>
+		会員番号:<%=session['user_id']%><br/>
+		ご利用可能ポイント:<%=@user['hd_point__c']%>
 	</p>
 
 
