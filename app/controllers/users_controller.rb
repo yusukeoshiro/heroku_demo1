@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       if @user.save
         require 'pg'
         conn = PG::Connection.open(ENV['DATABASE_URL'])
-        @res = conn.exec_params("INSERT INTO salesforce.contact (lastname, hd_password__c, email) VALUES ('#{@user.name}','#{@user.password}','#{@user.email}')")
+        @res = conn.exec_params("INSERT INTO salesforce.contact (lastname, hd_password__c, email, birthdate) VALUES ('#{@user.name}','#{@user.password}','#{@user.email}','#{@user.birthday}')")
         conn.close
 
         format.html { redirect_to @user, notice: 'User was successfully created.' }
