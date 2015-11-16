@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
       if res.num_tuples() > 0
       	return res[0]
       else
-      	return null
+      	return nil
       end
 
   end
