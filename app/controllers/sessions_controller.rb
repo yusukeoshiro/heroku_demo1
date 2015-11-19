@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 		if user
 			session[:user_id] = user['sfid']
 			session[:user_name] = user['name']
-			session[:user_no] = user['membership_number__c']
+			#session[:user_no] = user['membership_number__c']
 			redirect_to root_path
 		else
 			flash[:alert] = "failed to login"
