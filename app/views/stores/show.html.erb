@@ -1,7 +1,6 @@
 <style>
 	#store_image{
 		height:300px; 
-		background-image: url(<%=@store['image_url__c']%>);
 		background-size:contain;
 		background-position: center top;
 		background-repeat:no-repeat;
@@ -10,7 +9,7 @@
 
 <div class="container">
 	<h3><%=@store['name']%></h3>
-	<div id="store_image">
+	<div id="store_image" style="background-image:url(<%=@store['image_url__c']%>)">
 	</div>
 	<address>
 	  <strong>住所</strong><br>
