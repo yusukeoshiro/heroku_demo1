@@ -1,3 +1,4 @@
 Heroku Connect Demo in Japanese and English
+
 To deploy to heroku:
-heroku.com/deploy?template=https://github.com/yusukeoshiro/heroku_demo1
+https://heroku.com/deploy?template=https://github.com/yusukeoshiro/heroku_demo1
