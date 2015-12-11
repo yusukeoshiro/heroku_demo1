@@ -1,10 +1,10 @@
 <div class="container">
-<h3>あなたのカート</h3>
+<h3><%= t('your_cart') %></h3>
 	<table class="table">
 		<tr>
-			<th colspan="2">製品</th>
-			<th>価格</th>
-			<th>数量</th>
+			<th colspan="2"><%= t('product') %></th>
+			<th><%= t('unit_price') %></th>
+			<th><%= t('quantity') %></th>
 			<th></th>
 		</tr>
 		<% @res.each do |product| %>
@@ -13,13 +13,14 @@
 				<td><%=product['name']%></td>
 				<td><%=product['price__c']%></td>
 				<td><%=product['quantity__c']%></td>
-				<td><%=link_to("削除", remove_path(product['cartitem_id']))%></td>
+				<td><%=link_to( t('delete'), remove_path(product['cartitem_id']))%></td>
 			</tr>
 		<% end %>
 	</table>
 
 	<div class="text-center">
-		<button class="btn btn-danger">レジへ進む</button>
+		<%=link_to t('continue_shopping'), products_path %> &nbsp;&nbsp;&nbsp;
+		<button class="btn btn-danger"><%= t('checkout') %></button>
 	</div>
 
 </div>

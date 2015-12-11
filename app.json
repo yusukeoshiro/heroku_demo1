@@ -1,6 +1,6 @@
 {
-  "name": "Heroku demo 1",
-  "description": "created by yusuke oshiro",
+  "name": "Heroku demo 1 - i18n version",
+  "description": "created by yusuke oshiro (translated by riez)",
   "repository": "https://github.com/yusukeoshiro/heroku_demo1",
   "logo": "https://www.herokucdn.com/deploy/button.svg",
   "keywords": ["heroku","demo","rails","heroku connect"],
