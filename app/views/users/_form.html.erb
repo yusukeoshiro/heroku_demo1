@@ -12,22 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= t('name') %><br>
     <%= f.text_field :name %>
-  </div>
+  </div><br />
   <div class="field">
-    <%= f.label :email %><br>
+    <%= t('mail') %><br>
     <%= f.text_field :email %>
-  </div>
+  </div><br />
   <div class="field">
-    <%= f.label :birthday %><br>
+    <%= t('birthdate') %><br>
     <%= f.date_select :birthday %>
-  </div>
+  </div><br />
   <div class="field">
-    <%= f.label :password %><br>
+    <%= t('password') %><br>
     <%= f.text_field :password %>
-  </div>
+  </div><br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('submit')%>
   </div>
+  <br />
+  <br />
 <% end %>

@@ -1,17 +1,12 @@
-<div class="container"> 
+<div class="container">
 <div class="text-center">
-	<h3>店員にこのQRコードをご提示ください</h3>
+	<h3><%= t('show_qr_to_staff') %></h3>
 	<img src="https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=<%=session['user_id']%>&choe=UTF-8" style="width:100%;max-width:400px;"/>
 	<p>
 		<%= image_tag 'dummy_person.jpg', class:"img-circle img-thumbnail", size:"100x100" %><br/>
-		<strong>お名前:</strong><%=session['user_name']%> 様<br/>
-		<strong>会員番号:</strong><%=session['user_id']%><br/>
-		<strong>ご利用可能ポイント:</strong><%=@user['hd_point__c']%>
+		<strong><%= t('name') %>:</strong><%=session['user_name']%> <%= t('salutation') %><br/>
+		<strong><%= t('member_number') %>:</strong><%=session['user_id']%><br/>
+		<strong><%= t('points') %>:</strong><%=@user['hd_point__c']%>
 	</p>
-
-
-
 </div>
-
-
 </div>

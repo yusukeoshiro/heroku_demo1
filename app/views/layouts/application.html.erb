@@ -16,9 +16,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-
 	<%= csrf_meta_tags %>
-
 	<style>
 		.navbar-brand {
 			background: url(<%= getImageByCode("03") == false ? image_url('logo.png') : getImageByCode("03") %>) no-repeat left center;
@@ -26,15 +24,9 @@
 			height: 50px;
 			width: 250px;
 		}
-
-
 	</style>
-
-
-
 </head>
 <body>
-
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
@@ -46,13 +38,12 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="/"></a>
-
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li>
 						<%=link_to root_path do%>
-						<span class="glyphicon glyphicon-home" aria-hidden="true"></span> ホーム
+						<span class="glyphicon glyphicon-home" aria-hidden="true"></span> <%= t('menu_home') %>
 						<% end %>
 					</li>
 <!--
@@ -64,44 +55,36 @@
 -->
 					<li>
 						<%=link_to products_path do%>
-						<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 製品
+						<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= t('menu_product') %>
 						<% end %>
 					</li>
 					<li>
 						<%=link_to cart_path do%>
-						<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> カート
+						<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> <%= t('menu_cart') %>
 						<% end %>
 					</li>
 					<li>
 						<%=link_to userid_path do%>
-						<span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span> モバイル会員証
+						<span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span> <%= t('menu_mobile_member_card') %>
 						<% end %>
 					</li>
 					<li>
 						<%=link_to coupons_path do%>
-						<span class="glyphicon glyphicon-gift" aria-hidden="true"></span> クーポン 
-						<% if @has_new_coupons %>
-							<span class="label label-danger label-as-badge"><%=@num_coupons%></span>
-						<% end %>
-						
-
+							<span class="glyphicon glyphicon-gift" aria-hidden="true"></span> <%= t('menu_coupon') %>
+							<% if @has_new_coupons %>
+								<span class="label label-danger label-as-badge"><%=@num_coupons%></span>
+							<% end %>
 						<% end %>
 					</li>
 					<li>
 						<%=link_to stores_path do%>
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 近くの店舗
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= t('menu_nearby_shops') %>
 						<% end %>
 					</li>
-
-
-
-
-
-
 		<!--
 		            <li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-		              	<span class="glyphicon glyphicon-alert" aria-hidden="true"></span> 
+		              	<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
 		              	Dropdown <span class="caret"></span>
 		          	  </a>
 		              <ul class="dropdown-menu">
@@ -117,7 +100,7 @@
 		        -->
 		        <li>
 		        	<%=link_to logout_path do%>
-		        	<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト
+		        	<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> <%= t('menu_logout') %>
 		        	<% end %>
 		        </li>
 		    </ul>

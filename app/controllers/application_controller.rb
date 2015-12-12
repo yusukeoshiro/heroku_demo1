@@ -5,7 +5,17 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   before_action :login_required
   before_filter :getCoupon
+  before_action :set_locale
 
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  # app/controllers/application_controller.rb
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
+  end
+  
   def getCoupon
       puts "getcoupon fired"
       puts session[:user_id]
@@ -14,10 +24,10 @@ class ApplicationController < ActionController::Base
       #query1 = "SELECT * FROM salesforce.sentcoupon__c WHERE user__c = '#{session[:user_id]}' AND sent_time__c <= '#{Time.now.utc}' "
       #@coupons = conn.exec_params(query1)
       query2 = "SELECT * FROM salesforce.sentcoupon__c WHERE user__c = '#{session[:user_id]}' AND sent_time__c <= '#{Time.now.utc}' AND sent_time__c > '#{(Time.now -  60 * 60 * 24).utc}' "
-      @num_coupons = conn.exec_params(query2).num_tuples() 
+      @num_coupons = conn.exec_params(query2).num_tuples()
       @has_new_coupons = @num_coupons > 0
       conn.close
-      
+
       puts query2
       puts @num_coupons
       puts @has_new_coupons
@@ -33,7 +43,7 @@ class ApplicationController < ActionController::Base
       conn = PG::Connection.open(ENV['DATABASE_URL'])
       res = conn.exec_params("SELECT * FROM salesforce.contact WHERE sfid = '#{session[:user_id]}'")
       conn.close
-      if res.num_tuples() > 0        
+      if res.num_tuples() > 0
         return res[0]
       else
         return false
@@ -41,7 +51,7 @@ class ApplicationController < ActionController::Base
   	end
   end
 
-  	
+
 
   def login_required
   	unless current_user

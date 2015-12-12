@@ -1,0 +1,63 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ja:
+  your_cart: "あなたのカート"
+  product: "製品"
+  unit_price: "価格"
+  quantity: "数量"
+  checkout: "レジへ進む"
+  continue_shopping: "買い物を続ける"
+  delete: "削除"
+  your_coupon: "あなたのクーポン"
+  menu_home: "ホーム"
+  menu_product: "製品"
+  menu_cart: "カート"
+  menu_mobile_member_card: "モバイル会員証"
+  menu_coupon: "クーポン"
+  menu_nearby_shops: "近くの店舗"
+  menu_logout: "ログアウト"
+  today_sale_info: "今日の特売情報"
+  news: "ニュース"
+  show_qr_to_staff: "店員にこのQRコードをご提示ください"
+  name: "お名前"
+  salutation: "様"
+  birthdate: "生年月日"
+  member_number: "会員番号"
+  points: "ご利用可能ポイント"
+  product_catalog: "製品カタログ"
+  add_to_cart: "カートへ追加"
+  login_greeting: "今すぐログインしましょう!"
+  mail: "メールアドレス"
+  password: "パスワード"
+  sign_up: "サインアップ"
+  login: "ログイン"
+  show_nearby_shops: "近い店舗を表示"
+  address: "住所"
+  phone: "電話番号"
+  operating_hours: "営業時間"
+  user_edit: "ユーザ編集"
+  user_new: "新規ユーザ"
+  user_list: "ユーザ一覧"
+  show: "表示"
+  back: "戻る"
+  edit: "編集"
+  submit: "作成"

@@ -1,8 +1,8 @@
 <style>
 	#jtron{
-		background-image: url(<%= getImageByCode("02") == false ? image_url('bg.jpg') : getImageByCode("02") %>); 
+		background-image: url(<%= getImageByCode("02") == false ? image_url('bg.jpg') : getImageByCode("02") %>);
 		background-size:cover;
-	
+
 	}
 </style>
 
@@ -22,7 +22,7 @@
 </div>
 
 <div class="container">
-	<h3>今日の特売情報</h3>
+	<h3><%= t('today_sale_info') %></h3>
 	<p>
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -31,7 +31,7 @@
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	</p>
-	<h3>ニュース <span class="badge">3</span></h3>
+	<h3><%= t('news') %> <span class="badge">3</span></h3>
 	<p>
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
