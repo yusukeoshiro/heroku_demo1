@@ -7,4 +7,4 @@ To deploy to heroku, click this heroku button:
 {<img src="https://www.herokucdn.com/deploy/button.svg" alt="code climate">}[https://heroku.com/deploy?template=https://github.com/yusukeoshiro/heroku_demo1]
 
 =Step 2: Install the package below to your salesforce org
-https://login.salesforce.com/packaging/installPackage.apexp?p0=04t280000001xWV
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t280000001xWf
